@@ -1,0 +1,34 @@
+{% extends "dashboard/base.html" %}
+{% load pagination_tags %}
+{% load truncate_chars %}
+
+{% block search %}
+
+{% endblock %}
+
+{% block title %}
+<title>Log {{object.id}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div id="content">
+    Log ID: {{object.id}} <br />
+    {% if object.user %}
+        <a href="/dashboard/user/{{object.user.id}}/">User Changed: {{object.user.id}}</a> <br />
+    {% else %}
+    {% if isuser %}
+        <a href="/dashboard/user/{{object.id}}/">User Changed: {{object.id}}</a> <br />
+    {% endif %}
+    {% endif %}
+    <a href="/dashboard/user/{{object.by_user_id}}/">Changed by: {{object.by_user_id}}</a> <br />
+    Date: {{object.update_date}} <br />
+    Type: {{object.update_type}} <br />
+    Url: {{object.url}} <br />
+    Details: {{object.details}} <br />
+    Object State At Log: <br /><br /><br />
+    {{stateform.as_p}}
+    {{testform.as_p}}
+</div>
+
+{% endblock content %}

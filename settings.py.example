@@ -1,0 +1,7 @@
+AUDITED_MODELS = (
+                    ('auth', 'user'),
+                    ('account', 'Address'), 
+                    ('account', 'UserExtra'),
+                    ('account', 'Transaction'),
+                    ('merx', 'Subscription')
+                 )
