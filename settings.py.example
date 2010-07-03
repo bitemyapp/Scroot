@@ -1,7 +1,8 @@
+# left side app, right side model. easy cheesy.
 AUDITED_MODELS = (
                     ('auth', 'user'),
-                    ('account', 'Address'), 
-                    ('account', 'UserExtra'),
-                    ('account', 'Transaction'),
-                    ('merx', 'Subscription')
+                    ('accounting', 'Company'), 
+                    ('accounting', 'WhoCares'),
+                    ('accounting', 'Transaction'),
+                    ('merch', 'Product')
                  )
