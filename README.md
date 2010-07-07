@@ -36,5 +36,10 @@ Add a tuple to your settings.py that looks something like this,
 	                    ('merch', 'Product')
 	                 )
 
+And add:
+	'audit.middleware.threadlocals.ThreadLocals',
+
+To your middleware tuple.
+
 As long as Django knows where your app is, you should be in good shape. 
 If this breaks, your path is scrambled worse than hangover eggs. Go fix it.
