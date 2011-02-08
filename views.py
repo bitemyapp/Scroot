@@ -7,7 +7,9 @@ from django import forms
 
 import pickle
 
+# Straight-up: this should be in Django core if it isn't already.
 def form_factory(inst):
+    # class of the unpickled object
     object_model = inst.__class__
     class _GenericMF(forms.ModelForm):
         def __init__(self, *args, **kwargs):
@@ -23,6 +25,8 @@ def form_factory(inst):
     f = _GenericMF(instance=inst)
     for label in f.fields:
         if f.fields[label].__class__ == forms.ModelChoiceField:
+            # you'd think I'd be able to eliminate this in either __init__ or
+            # here eh?
             f.fields[label] = forms.CharField(max_length=200)
     return f
 
